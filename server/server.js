@@ -11,7 +11,7 @@ var app = express();
 app.use(bodyParser.json());
 
 app.post('/todos', (req ,res ,next) => {
-    console.log(req.body);
+    // console.log(req.body);
     var todo = new Todo({
          text : req.body.text
     })
@@ -26,3 +26,6 @@ app.post('/todos', (req ,res ,next) => {
 app.listen(PORT, () => {
     console.log(`Start Server on port ${PORT}`)
 })
+
+
+module.exports = {app};
