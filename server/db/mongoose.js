@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-const checkConnection = mongoose.connect('mongodb://localhost:27017/TodoApp', {useMongoClient: true})
+console.log('MONGODB_URI :: ' , process.env.MONGODB_URI)
+const checkConnection = mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
 checkConnection.on('error', console.error.bind(console, 'connection error:'));
 checkConnection.once('open', function () {
     console.log('Connected Mongo Server.');
@@ -11,3 +12,5 @@ checkConnection.once('open', function () {
 module.exports = {
     mongoose
 }
+
+// process.env.NODE_ENV  === 'test'
