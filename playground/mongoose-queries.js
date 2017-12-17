@@ -5,9 +5,11 @@ const {User} = require('./../server/models/user');
 
 var id = '5a2d5deed1c15dcfc0c3063c';
 
-// if(!ObjectID.isValid(id)){
-//     console.log('ID not valid');
-// }
+if(!ObjectID.isValid(id)){
+    console.log('ID not valid');
+}else{
+    console.log('ID valid');
+}
 
 // Todo.find({
 //     _id : id
@@ -32,8 +34,8 @@ var id = '5a2d5deed1c15dcfc0c3063c';
 // }).catch( err => console.log(err));
 
 
-User.findById("5a2d2c1f3decea0667ea9569").then( user => {
-    if(!user) return console.log('User not found !');
-    console.log(JSON.stringify(user , undefined , 2));
-}).catch( err => console.log('err :: ' , err))
+// User.findById("5a2d2c1f3decea0667ea9569").then( user => {
+//     if(!user) return console.log('User not found !');
+//     console.log(JSON.stringify(user , undefined , 2));
+// }).catch( err => console.log('err :: ' , err))
 
